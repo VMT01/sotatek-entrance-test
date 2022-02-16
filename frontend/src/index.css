@@ -17,6 +17,7 @@ code {
 .App {
   width: 100vw;
   height: 100vh;
+  min-width: 500px;
   padding: 3rem 10rem;
   display: inline-flex;
   box-sizing: border-box;
@@ -193,4 +194,47 @@ code {
 
 .max-height {
   max-height: 29rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .App {
+    padding: 2.5rem 5rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .App {
+    padding: 2rem 2rem;
+  }
+  .task {
+    padding: 1rem 2rem 1rem;
+  }
+  .todo-list {
+    padding: 1rem 2rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .App {
+    padding: 3rem 10rem;
+    display: block;
+  }
+  .task {
+    width: 100%;
+  }
+  .todo-list {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .App {
+    padding: 2.5rem 5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    padding: 2rem;
+  }
 }

@@ -8,7 +8,7 @@
 - Store data to LocalStorage is a plus. **Done**
 - The code smells good. **Kinda**
 - Not using libraries for CSS is a plus. **CSS ONLY**
+- Nice and responsive interface is a plus. **Basic responsive**
 
 ## Incomplete Tasks
-- Nice and responsive interface is a plus. **Nice but not responsive**
 - Create backend to be able to save this To do list to database and load it from database. **Not yet**
