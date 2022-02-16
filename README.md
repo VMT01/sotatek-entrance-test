@@ -9,6 +9,4 @@
 - The code smells good. **Kinda**
 - Not using libraries for CSS is a plus. **CSS ONLY**
 - Nice and responsive interface is a plus. **Basic responsive**
-
-## Incomplete Tasks
-- Create backend to be able to save this To do list to database and load it from database. **Not yet**
+- Create backend to be able to save this To do list to database and load it from database. **Basic storage with JSON**
