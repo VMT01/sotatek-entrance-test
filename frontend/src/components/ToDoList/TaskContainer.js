@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import TaskInfo from "../TaskInfo";
 
@@ -10,6 +11,13 @@ export default function TaskContainer({ item, index, setTaskList }) {
     setTaskList((old) => {
       const tempOld = [...old];
       tempOld[index] = { ...tempOld[index], checked: e.target.checked };
+
+      // For localStorage
+      localStorage.setItem("SotaTek", JSON.stringify(tempOld));
+
+      // For server
+      // axios.post("http://localhost:5000/update", tempOld);
+
       return tempOld;
     });
   }
@@ -21,7 +29,12 @@ export default function TaskContainer({ item, index, setTaskList }) {
       setTaskList((old) => {
         const tempOld = [...old];
         tempOld[index] = task;
-        localStorage.setItem("SotaTeK", JSON.stringify(tempOld));
+
+        // For localStorage
+        localStorage.setItem("SotaTek", JSON.stringify(tempOld));
+
+        // For server
+        // axios.post("http://localhost:5000/update", tempOld);
         return tempOld;
       });
     }
@@ -30,7 +43,12 @@ export default function TaskContainer({ item, index, setTaskList }) {
   function handleRemove() {
     setTaskList((old) => {
       const tempOld = old.filter((_, idx) => idx !== index);
-      localStorage.setItem("SotaTeK", JSON.stringify(tempOld));
+
+      // For localStorage
+      localStorage.setItem("SotaTek", JSON.stringify(tempOld));
+
+      // For server
+      // axios.post("http://localhost:5000/update", tempOld);
       return tempOld;
     });
   }

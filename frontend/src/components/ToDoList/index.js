@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useMemo, useState } from "react";
 import TaskContainer from "./TaskContainer";
 
@@ -10,7 +11,13 @@ export default function ToDoList({ taskList = [], setTaskList }) {
 
   function removeChecked() {
     const checkedTasks = [...taskList].filter((t) => t.checked === false);
-    localStorage.setItem("SotaTeK", JSON.stringify(checkedTasks));
+
+    // For localStorage
+    localStorage.setItem("SotaTek", JSON.stringify(checkedTasks));
+
+    // For server
+    // axios.post("http://localhost:5000/update", checkedTasks);
+
     setTaskList(checkedTasks);
   }
 

@@ -125,6 +125,7 @@ code {
 }
 
 .todo-list__item-center {
+  max-width: 40%;
   display: flex;
   align-items: center;
 }
@@ -137,6 +138,8 @@ code {
 }
 
 .todo-list__checkbox {
+  margin: 0;
+  padding: 0;
   width: 20px;
   height: 20px;
   margin-right: 1rem;
@@ -224,6 +227,9 @@ code {
   }
   .todo-list {
     width: 100%;
+  }
+  .todo-list__bulk-box {
+    position: relative;
   }
 }
 

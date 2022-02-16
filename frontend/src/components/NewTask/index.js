@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import TaskInfo from "../TaskInfo";
 const defaultTask = {
@@ -8,18 +9,22 @@ const defaultTask = {
   checked: false,
 };
 
-export default function NewTask({ setTaskList }) {
+export default function NewTask({ taskList = [], setTaskList }) {
   const [task, setTask] = useState(defaultTask);
 
   function handleSubmit() {
     if (task.taskTitle === "") {
       alert("Task Title is required!");
     } else {
-      setTaskList((old) => {
-        const tempOld = [...old, task];
-        localStorage.setItem("SotaTeK", JSON.stringify(tempOld));
-        return tempOld;
-      });
+      const tempTaskList = [...taskList, task];
+
+      // For localStorage
+      localStorage.setItem("SotaTek", JSON.stringify(tempTaskList));
+
+      // For server
+      // axios.post("http://localhost:5000/update", tempTaskList);
+      
+      setTaskList(tempTaskList);
       setTask(defaultTask);
     }
   }
